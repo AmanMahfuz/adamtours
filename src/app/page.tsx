@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import AboutUs from "@/components/AboutUs";
+import CustomerShowcase from "@/components/CustomerShowcase";
 import Fleet from "@/components/Fleet";
 import Services from "@/components/Services";
 import Destinations from "@/components/Destinations";
@@ -17,12 +19,14 @@ export default function Home() {
     <main className="min-h-screen bg-luxury-white text-luxury-black relative">
       <Navbar />
       <Hero />
+      <AboutUs />
       <Fleet />
       <Services />
       <Statistics />
       <Destinations />
       <Packages />
       <Testimonials />
+      <CustomerShowcase />
       <FAQ />
       <CTA />
       <Footer />

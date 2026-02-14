@@ -9,25 +9,29 @@ const testimonials = [
         name: "Sarah Jenkins",
         location: "United Kingdom",
         text: "The most comfortable journey we've had in India. The driver was professional and the car was immaculate.",
-        rating: 5
+        rating: 5,
+        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah&backgroundColor=f0e68c"
     },
     {
         name: "Rajesh Kumar",
         location: "Bangalore",
         text: "Excellent service for our corporate event. Timely, professional, and very well coordinated.",
-        rating: 5
+        rating: 5,
+        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rajesh&backgroundColor=deb887"
     },
     {
         name: "Anita Desai",
         location: "Mumbai",
         text: "Booking a wedding fleet with Adam Tours was the best decision. Everything went smoothly.",
-        rating: 5
+        rating: 5,
+        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anita&backgroundColor=f5deb3"
     },
     {
         name: "David Smith",
         location: "Australia",
         text: "A truly premium experience. The driver acted as a perfect guide for our Kerala tour.",
-        rating: 5
+        rating: 5,
+        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=David&backgroundColor=e6d5b8"
     }
 ];
 
@@ -65,8 +69,12 @@ export default function Testimonials() {
                             </p>
 
                             <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-full bg-gold-metallic/10 flex items-center justify-center text-gold-metallic font-serif font-bold">
-                                    {testimonial.name[0]}
+                                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-gold-metallic/20 group-hover:border-gold-metallic/40 transition-all duration-300 shrink-0">
+                                    <img
+                                        src={testimonial.image}
+                                        alt={testimonial.name}
+                                        className="w-full h-full object-cover"
+                                    />
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-luxury-black">{testimonial.name}</h4>
