@@ -95,7 +95,7 @@ export default function Hero() {
                     <div className="absolute inset-0 bg-luxury-ivory rounded-[3rem] overflow-hidden border border-luxury-black/5 shadow-2xl">
                         <Image
                             src="/vehicles/urbania3.jpeg"
-                            alt="Premium Fleet - Adam Tours Urbania"
+                            alt="Luxury Force Urbania van by Adam Tours & Travels Kerala - Premium group travel and tourism"
                             fill
                             className="object-cover"
                             priority

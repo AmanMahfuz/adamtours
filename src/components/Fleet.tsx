@@ -2,65 +2,46 @@
 
 import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/Button";
-import { Users, Briefcase, Snowflake, Fuel } from "lucide-react";
+import { Users } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const vehicles = [
     {
         id: 1,
-        name: "Luxury Sedan",
-        category: "Executive",
+        name: "Toyota Etios",
+        category: "Sedan",
         seats: 4,
-        features: ["AC", "Leather", "WiFi"],
-        image: "/brand/sedan-placeholder.jpg",
+        features: ["AC", "Premium Comfort", "Ample Boot"],
+        image: "/vehicles/etios.png",
         price: "₹12/km"
     },
     {
         id: 2,
-        name: "Executive SUV",
-        category: "Premium",
-        seats: 7,
-        features: ["AC", "Panoramic Roof", "WiFi"],
-        image: "/brand/suv-placeholder.jpg",
+        name: "Maruti Ertiga",
+        category: "MUV",
+        seats: 6,
+        features: ["AC", "Smooth Journey", "Modern Interior"],
+        image: "/vehicles/ertiga.png",
         price: "₹18/km"
     },
     {
         id: 3,
-        name: "Premium SUV",
-        category: "Luxury",
+        name: "Toyota Innova",
+        category: "Premium SUV",
         seats: 7,
-        features: ["AC", "Reclining Seats", "Entertainment"],
-        image: "/brand/premium-suv-placeholder.jpg",
+        features: ["AC", "Executive Travel", "Spacious"],
+        image: "/vehicles/innova.png",
         price: "₹25/km"
     },
     {
         id: 4,
-        name: "Tempo Traveller",
-        category: "Group",
-        seats: 12,
-        features: ["AC", "Pushback Seats", "Ample Luggage"],
-        image: "/brand/tempo-placeholder.jpg",
-        price: "₹30/km"
-    },
-    {
-        id: 5,
-        name: "Mini Luxury Bus",
-        category: "Group",
-        seats: 22,
-        features: ["AC", "Air Suspension", "Reading Lights"],
-        image: "/brand/minibus-placeholder.jpg",
-        price: "₹45/km"
-    },
-    {
-        id: 6,
-        name: "Tourist Coach",
-        category: "Large Group",
-        seats: 45,
-        features: ["AC", "Sleeper/Seater", "Washroom"],
-        image: "/brand/coach-placeholder.jpg",
-        price: "₹60/km"
+        name: "Force Urbania",
+        category: "Luxury Van",
+        seats: "12-17",
+        features: ["AC", "Grand Luxury", "Group Special"],
+        image: "/vehicles/urbania1.jpeg",
+        price: "₹35/km"
     },
 ];
 
@@ -87,7 +68,7 @@ export default function Fleet() {
                 </motion.h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 {vehicles.map((vehicle, index) => (
                     <VehicleCard key={vehicle.id} vehicle={vehicle} index={index} />
                 ))}
@@ -110,44 +91,46 @@ function VehicleCard({ vehicle, index }: { vehicle: any, index: number }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="group bg-white rounded-2xl overflow-hidden border border-luxury-black/5 hover:border-gold-metallic/30 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300"
+            className="group bg-white rounded-3xl overflow-hidden border border-luxury-black/5 hover:border-gold-metallic/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition-all duration-500 h-full flex flex-col"
         >
             {/* Image Area */}
-            <div className="relative h-56 bg-luxury-ivory p-4 flex items-center justify-center overflow-hidden">
-                {/* Simple background circle */}
-                <div className="absolute w-48 h-48 bg-white rounded-full opacity-50" />
+            <div className="relative h-64 bg-luxury-ivory overflow-hidden">
+                <Image
+                    src={vehicle.image}
+                    alt={vehicle.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                />
 
-                {/* Vehicle Representation */}
-                <div className="relative z-10 text-luxury-black/10 text-4xl font-bold font-sans tracking-tight select-none group-hover:scale-105 transition-transform duration-500">
-                    {vehicle.name}
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/80 via-transparent to-transparent opacity-40 group-hover:opacity-30 transition-opacity duration-500" />
 
-                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-lg text-xs font-bold text-luxury-black border border-luxury-black/5 shadow-sm">
+                <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold text-luxury-black border border-white/20 shadow-sm z-10 tracking-[0.2em] uppercase">
                     {vehicle.category}
                 </div>
             </div>
 
             {/* Content */}
-            <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                    <div>
-                        <h3 className="text-xl font-bold text-luxury-black mb-1">
+            <div className="p-8 flex flex-col flex-1">
+                <div className="mb-6">
+                    <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-2xl font-serif font-bold text-luxury-black group-hover:text-gold-metallic transition-colors duration-300">
                             {vehicle.name}
                         </h3>
-                        <p className="text-sm text-luxury-muted flex items-center gap-2">
-                            <Users size={14} className="text-gold-metallic" />
-                            {vehicle.seats} Seater
-                        </p>
+                        <div className="text-right">
+                            <div className="text-xl font-serif font-bold text-gold-metallic">{vehicle.price}</div>
+                            <div className="text-[10px] text-luxury-muted uppercase tracking-tighter">Starting Rate</div>
+                        </div>
                     </div>
-                    <div className="text-right">
-                        <div className="text-lg font-bold text-gold-metallic">{vehicle.price}</div>
-                        <div className="text-xs text-luxury-muted">Starting from</div>
+                    <div className="flex items-center gap-2 text-luxury-gray">
+                        <Users size={16} className="text-gold-metallic" />
+                        <span className="text-sm font-medium">{vehicle.seats} Seater Comfort</span>
                     </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                    {vehicle.features.slice(0, 3).map((feature: string, i: number) => (
-                        <span key={i} className="text-xs font-medium text-luxury-gray bg-luxury-ivory px-2 py-1 rounded-md border border-luxury-black/5">
+                <div className="flex flex-wrap gap-2 mb-8 mt-auto">
+                    {vehicle.features.map((feature: string, i: number) => (
+                        <span key={i} className="text-[10px] font-bold uppercase tracking-widest text-luxury-gray bg-luxury-ivory px-3 py-1.5 rounded-lg border border-luxury-black/5 group-hover:border-gold-metallic/20 transition-colors duration-300">
                             {feature}
                         </span>
                     ))}
@@ -156,9 +139,9 @@ function VehicleCard({ vehicle, index }: { vehicle: any, index: number }) {
                 <Button
                     variant="outline"
                     onClick={scrollToBooking}
-                    className="w-full border-luxury-black/10 hover:border-gold-metallic hover:bg-gold-metallic hover:text-white transition-all duration-300 group-hover:border-gold-metallic/50"
+                    className="w-full border-luxury-black/10 hover:border-gold-metallic hover:bg-gold-metallic hover:text-white transition-all duration-500 group-hover:shadow-lg py-6 text-sm tracking-widest uppercase"
                 >
-                    Book This Car
+                    Reserve This Vehicle
                 </Button>
             </div>
         </motion.div>

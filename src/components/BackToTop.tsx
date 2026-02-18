@@ -30,6 +30,7 @@ export default function BackToTop() {
                     exit={{ scale: 0, opacity: 0 }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
+                    aria-label="Back to top"
                 >
                     <ArrowUp size={20} />
                 </motion.button>

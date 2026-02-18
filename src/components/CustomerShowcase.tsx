@@ -27,6 +27,8 @@ export default function CustomerShowcase() {
                     className="flex gap-6 w-max px-4 pb-20"
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                    aria-label="Customer journey photo gallery"
+                    role="region"
                 >
                     {[...images, ...images].map((image, index) => (
                         <div

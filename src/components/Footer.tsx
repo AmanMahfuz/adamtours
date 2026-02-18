@@ -1,5 +1,6 @@
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
     return (
@@ -8,18 +9,28 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     {/* Brand */}
                     <div className="space-y-6">
-                        <h2 className="text-3xl font-serif font-bold text-luxury-black">
-                            ADAM <span className="text-gold-metallic">TOURS</span>
-                        </h2>
+                        <Link href="/" className="inline-block relative w-40 h-10">
+                            <Image
+                                src="/logo1.png"
+                                alt="Adam Tours Logo"
+                                fill
+                                className="object-contain object-left"
+                            />
+                        </Link>
                         <p className="text-luxury-gray leading-relaxed max-w-xs text-sm">
                             Experience the pinnacle of luxury travel. Premium vehicles, curated destinations, and unforgettable journeys.
                         </p>
                         <div className="flex gap-4">
-                            {[Instagram, Facebook, Twitter].map((Icon, i) => (
+                            {[
+                                { Icon: Instagram, name: "Instagram" },
+                                { Icon: Facebook, name: "Facebook" },
+                                { Icon: Twitter, name: "Twitter" }
+                            ].map(({ Icon, name }, i) => (
                                 <a
                                     key={i}
                                     href="#"
                                     className="w-10 h-10 rounded-full border border-luxury-black/10 flex items-center justify-center text-luxury-gray hover:text-gold-metallic hover:border-gold-metallic transition-all duration-300"
+                                    aria-label={`Follow us on ${name}`}
                                 >
                                     <Icon size={18} />
                                 </a>
@@ -65,11 +76,12 @@ export default function Footer() {
                         <h3 className="text-sm font-bold uppercase tracking-widest text-luxury-black mb-6">Newsletter</h3>
                         <p className="text-luxury-gray text-sm mb-4">Subscribe for exclusive offers and travel inspiration.</p>
                         <form className="space-y-3">
+                            <label htmlFor="footer-newsletter" className="sr-only">Newsletter Email</label>
                             <input
                                 type="email"
+                                id="footer-newsletter"
                                 placeholder="Your email address"
                                 className="w-full bg-luxury-ivory border border-luxury-black/10 rounded-lg px-4 py-3 text-luxury-black focus:outline-none focus:border-gold-metallic transition-colors placeholder:text-luxury-muted/50 text-sm"
-                                aria-label="Email for newsletter"
                             />
                             <button
                                 type="button"

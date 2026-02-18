@@ -19,6 +19,7 @@ export default function WhatsAppButton() {
             transition={{ delay: 1, type: "spring", stiffness: 200 }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="Chat with us on WhatsApp"
         >
             <motion.div
                 animate={{ scale: [1, 1.2, 1] }}

@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Facebook, Twitter } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Button from "@/components/Button";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 
 const navLinks = [
     { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
     { name: "Fleet", href: "#fleet" },
     { name: "Services", href: "#services" },
     { name: "Destinations", href: "#destinations" },
@@ -85,16 +86,17 @@ export default function Navbar() {
                         ? "bg-white/90 backdrop-blur-xl border border-luxury-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.08)] rounded-full px-6 py-3 w-[90%] md:w-auto min-w-[320px] md:min-w-[700px]"
                         : "bg-transparent w-full max-w-7xl px-8 py-2"
                 )}
+                aria-label="Main navigation"
             >
                 {/* Logo */}
                 <motion.div layout className="flex-shrink-0 relative group mr-8">
-                    <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                    <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Adam Tours Home">
                         <div className="relative w-32 h-10">
                             <Image
-                                src="/image.png"
+                                src="/logo1.png"
                                 alt="Adam Tours Logo"
                                 fill
-                                className="object-contain object-left"
+                                className="object-contain object-left group-hover:scale-105 transition-transform duration-300"
                                 priority
                             />
                         </div>
@@ -116,6 +118,8 @@ export default function Navbar() {
                                         ? "text-gold-metallic bg-gold-metallic/10"
                                         : "text-luxury-gray hover:text-luxury-black hover:bg-luxury-black/5"
                                 )}
+                                aria-current={isActive ? "page" : undefined}
+                                aria-label={`Scroll to ${link.name} section`}
                             >
                                 {link.name}
                             </Link>
@@ -131,6 +135,7 @@ export default function Navbar() {
                             variant="primary"
                             onClick={scrollToBooking}
                             className={cn("px-6 py-2 text-xs uppercase tracking-widest h-10")}
+                            aria-label="Book a ride"
                         >
                             Book Ride
                         </Button>
@@ -140,6 +145,8 @@ export default function Navbar() {
                     <button
                         className="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-luxury-black/5 hover:bg-luxury-black/10 transition-colors text-luxury-black"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                        aria-expanded={isMobileMenuOpen}
                     >
                         {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
                     </button>
@@ -154,6 +161,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -20 }}
                         className="fixed top-24 left-4 right-4 z-40 bg-white rounded-3xl shadow-2xl border border-luxury-black/5 p-6 md:hidden pointer-events-auto"
+                        aria-label="Mobile navigation menu"
                     >
                         <div className="flex flex-col space-y-4">
                             {navLinks.map((link) => {
@@ -167,6 +175,8 @@ export default function Navbar() {
                                             "text-lg font-bold p-3 rounded-xl transition-colors flex justify-between items-center group",
                                             isActive ? "text-gold-metallic bg-gold-metallic/10" : "text-luxury-black hover:bg-luxury-ivory"
                                         )}
+                                        aria-current={isActive ? "page" : undefined}
+                                        aria-label={`Scroll to ${link.name} section`}
                                     >
                                         {link.name}
                                         <span className={cn(
@@ -176,8 +186,24 @@ export default function Navbar() {
                                     </Link>
                                 );
                             })}
+                            <div className="flex gap-4">
+                                {[
+                                    { Icon: Instagram, name: "Instagram" },
+                                    { Icon: Facebook, name: "Facebook" },
+                                    { Icon: Twitter, name: "Twitter" }
+                                ].map(({ Icon, name }, i) => (
+                                    <a
+                                        key={i}
+                                        href="#"
+                                        className="w-10 h-10 rounded-full border border-luxury-black/10 flex items-center justify-center text-luxury-gray hover:text-gold-metallic hover:border-gold-metallic transition-all duration-300"
+                                        aria-label={`Follow us on ${name}`}
+                                    >
+                                        <Icon size={18} />
+                                    </a>
+                                ))}
+                            </div>
                             <div className="pt-4 border-t border-luxury-black/5">
-                                <Button variant="primary" onClick={scrollToBooking} className="w-full justify-center">
+                                <Button variant="primary" onClick={scrollToBooking} className="w-full justify-center" aria-label="Book your ride now">
                                     Book Your Ride
                                 </Button>
                             </div>

@@ -2,12 +2,13 @@
 
 import SectionWrapper from "@/components/SectionWrapper";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const destinations = [
-    { name: "Munnar", image: "/destinations/munnar.jpg", description: "Hills & Tea Gardens" },
-    { name: "Alleppey", image: "/destinations/alleppey.jpg", description: "Backwater Cruises" },
-    { name: "Wayanad", image: "/destinations/wayanad.jpg", description: "Nature & Wildlife" },
-    { name: "Kochi", image: "/destinations/kochi.jpg", description: "Heritage & Culture" },
+    { name: "Munnar", image: "/locations/munnar.jpg", description: "Hills & Tea Gardens" },
+    { name: "Alleppey", image: "/locations/alappuzha.jpg", description: "Backwater Cruises" },
+    { name: "Wayanad", image: "/locations/wayanad1.jpg", description: "Nature & Wildlife" },
+    { name: "Kochi", image: "/locations/kochi.jpg", description: "Heritage & Culture" },
 ];
 
 export default function Destinations() {
@@ -29,24 +30,32 @@ export default function Destinations() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="group relative h-[400px] rounded-3xl overflow-hidden cursor-pointer bg-white shadow-lg"
+                        className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer bg-white shadow-lg"
                     >
-                        <div className="absolute inset-0 bg-luxury-gray/10 transition-transform duration-700 group-hover:scale-105">
-                            {/* Placeholder for image */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/80 via-transparent to-transparent opacity-80" />
-                            <div className="absolute inset-0 flex items-center justify-center text-luxury-white/20 font-serif text-8xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                {dest.name[0]}
-                            </div>
+                        <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                            <Image
+                                src={dest.image}
+                                alt={dest.name}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/90 via-luxury-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                         </div>
 
                         <div className="absolute bottom-0 left-0 p-8 w-full z-10">
-                            <p className="text-gold-metallic text-sm font-bold tracking-widest uppercase mb-2 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                            <p className="text-gold-metallic text-sm font-bold tracking-widest uppercase mb-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                                 {dest.description}
                             </p>
                             <h3 className="text-3xl font-serif font-bold text-white relative inline-block">
                                 {dest.name}
                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-metallic transition-all duration-500 group-hover:w-full" />
                             </h3>
+                            <div className="mt-4 overflow-hidden">
+                                <p className="text-white/70 text-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-200">
+                                    Click to explore tour packages for {dest.name}
+                                </p>
+                            </div>
                         </div>
                     </motion.div>
                 ))}

@@ -77,23 +77,43 @@ export default function ContactPage() {
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-sm font-bold text-luxury-muted uppercase">Name</label>
-                                    <input type="text" className="w-full bg-luxury-ivory rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-metallic/20 border border-transparent focus:border-gold-metallic transition-all" placeholder="Your Name" />
+                                    <label htmlFor="contact-name" className="text-sm font-bold text-luxury-muted uppercase">Name</label>
+                                    <input
+                                        type="text"
+                                        id="contact-name"
+                                        className="w-full bg-luxury-ivory rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-metallic/20 border border-transparent focus:border-gold-metallic transition-all"
+                                        placeholder="Your Name"
+                                    />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-sm font-bold text-luxury-muted uppercase">Phone</label>
-                                    <input type="tel" className="w-full bg-luxury-ivory rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-metallic/20 border border-transparent focus:border-gold-metallic transition-all" placeholder="Your Number" />
+                                    <label htmlFor="contact-phone" className="text-sm font-bold text-luxury-muted uppercase">Phone</label>
+                                    <input
+                                        type="tel"
+                                        id="contact-phone"
+                                        className="w-full bg-luxury-ivory rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-metallic/20 border border-transparent focus:border-gold-metallic transition-all"
+                                        placeholder="Your Number"
+                                    />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-luxury-muted uppercase">Email</label>
-                                <input type="email" className="w-full bg-luxury-ivory rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-metallic/20 border border-transparent focus:border-gold-metallic transition-all" placeholder="Your Email" />
+                                <label htmlFor="contact-email" className="text-sm font-bold text-luxury-muted uppercase">Email</label>
+                                <input
+                                    type="email"
+                                    id="contact-email"
+                                    className="w-full bg-luxury-ivory rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-metallic/20 border border-transparent focus:border-gold-metallic transition-all"
+                                    placeholder="Your Email"
+                                />
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-luxury-muted uppercase">Message</label>
-                                <textarea rows={4} className="w-full bg-luxury-ivory rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-metallic/20 border border-transparent focus:border-gold-metallic transition-all resize-none" placeholder="How can we help you?"></textarea>
+                                <label htmlFor="contact-message" className="text-sm font-bold text-luxury-muted uppercase">Message</label>
+                                <textarea
+                                    id="contact-message"
+                                    rows={4}
+                                    className="w-full bg-luxury-ivory rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-metallic/20 border border-transparent focus:border-gold-metallic transition-all resize-none"
+                                    placeholder="How can we help you?"
+                                ></textarea>
                             </div>
 
                             <Button variant="primary" className="w-full justify-center py-4 text-base">

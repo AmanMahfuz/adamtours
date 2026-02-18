@@ -45,9 +45,11 @@ export default function Testimonials() {
 
             <div className="relative w-full overflow-hidden">
                 <motion.div
-                    className="flex gap-8 w-max px-4 pb-12"
+                    className="flex gap-6 w-max px-4 pb-20"
                     animate={{ x: ["0%", "-50%"] }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                    aria-label="Customer journey photo gallery"
+                    role="region"
                 >
                     {[...testimonials, ...testimonials].map((testimonial, index) => (
                         <div
