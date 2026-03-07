@@ -5,8 +5,8 @@
   --color-luxury-white: #FFFFFF;
   --color-luxury-ivory: #FFFFFF;
   --color-luxury-black: #111111;
-  --color-luxury-gray: #444444;
-  --color-luxury-muted: #777777;
+  --color-luxury-gray: #333333;
+  --color-luxury-muted: #555555;
 
   --color-gold-metallic: #C6A84F;
   --color-gold-rich: #B9963A;
@@ -66,20 +66,25 @@
 }
 
 /* Global Styles */
-:root {
-  --background: #FFFFFF;
-  --foreground: #000000;
-}
-
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #000000;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
   overflow-x: hidden;
+  position: relative;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

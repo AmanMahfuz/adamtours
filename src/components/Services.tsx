@@ -42,7 +42,7 @@ export default function Services() {
         <SectionWrapper id="services" className="bg-luxury-white">
             <div className="text-center mb-16 space-y-4">
                 <span className="text-gold-metallic text-sm font-bold tracking-[0.2em] uppercase">Why Choose Us</span>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-black">Premium Services</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-black">Why Choose Our Kochi Taxi Service</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -53,7 +53,7 @@ export default function Services() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="group p-8 rounded-2xl bg-white border border-luxury-black/5 hover:border-gold-metallic/30 hover:shadow-[0_10px_30px_rgba(198,168,79,0.1)] transition-all duration-300"
+                        className="group p-8 rounded-2xl bg-white border border-luxury-black/5 hover:border-gold-metallic/30 hover:shadow-[0_10px_30px_rgba(198,168,79,0.1)] transition-all duration-300 transform-gpu will-change-transform"
                     >
                         <div className="w-14 h-14 rounded-full bg-luxury-ivory flex items-center justify-center text-gold-metallic mb-6 group-hover:bg-gold-metallic group-hover:text-white transition-all duration-300">
                             <service.icon size={28} strokeWidth={1.5} />

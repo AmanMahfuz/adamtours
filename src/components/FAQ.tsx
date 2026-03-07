@@ -4,6 +4,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
+import { companyConfig } from "@/lib/config";
 
 const faqs = [
     {
@@ -28,7 +29,7 @@ const faqs = [
     },
     {
         question: "Can I customize my tour package?",
-        answer: "Yes, we specialize in customized tour packages. Tell us your preferences, budget, and destinations, and we'll create a perfect itinerary for you."
+        answer: `Yes, we specialize in customized tour packages. Tell us your preferences, budget, and destinations, and we'll create a perfect itinerary for you with ${companyConfig.name}.`
     }
 ];
 

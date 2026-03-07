@@ -6,7 +6,7 @@ import CustomerShowcase from "@/components/CustomerShowcase";
 import Fleet from "@/components/Fleet";
 import Services from "@/components/Services";
 import Destinations from "@/components/Destinations";
-import Packages from "@/components/Packages";
+import PopularTrips from "@/components/PopularTrips";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Statistics from "@/components/Statistics";
@@ -20,11 +20,11 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutUs />
+      <Statistics />
       <Fleet />
       <Services />
-      <Statistics />
       <Destinations />
-      <Packages />
+      <PopularTrips />
       <Testimonials />
       <CustomerShowcase />
       <FAQ />

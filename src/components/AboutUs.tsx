@@ -3,12 +3,13 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import { motion } from "framer-motion";
 import { Award, Heart, Shield, Users } from "lucide-react";
+import { companyConfig } from "@/lib/config";
 
 const stats = [
-    { value: "15+", label: "Years of Excellence" },
-    { value: "10,000+", label: "Happy Customers" },
-    { value: "50+", label: "Premium Vehicles" },
-    { value: "100+", label: "Destinations Covered" }
+    { value: "6+", label: "Years of Excellence" },
+    { value: "1,000+", label: "Happy Customers" },
+    { value: "4+", label: "Premium Vehicles" },
+    { value: "50+", label: "Destinations Covered" }
 ];
 
 const values = [
@@ -49,14 +50,13 @@ export default function AboutUs() {
                     <div className="space-y-4">
                         <span className="text-gold-metallic text-sm font-bold tracking-[0.2em] uppercase">The Legacy</span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-luxury-black leading-tight">
-                            Redefining Luxury <br />
-                            <span className="text-gold-metallic italic">Since 2010</span>
+                            About Adam Tours & Travels Kochi
                         </h2>
                     </div>
 
                     <div className="space-y-6 text-lg text-luxury-gray font-light leading-relaxed">
                         <p>
-                            At <span className="text-gold-metallic font-semibold text-luxury-black">Adam Tours</span>, we don't just provide transportation; we curate experiences. Our journey began with a single vision: to bridge the gap between reliable travel and premium luxury service in India.
+                            At <span className="text-gold-metallic font-semibold text-luxury-black">{companyConfig.name}</span>, we don't just provide transportation; we curate experiences. Our journey began with a single vision: to bridge the gap between reliable travel and premium luxury service in India.
                         </p>
                         <p>
                             Today, we stand as a symbol of trust for thousands of travelers worldwide, offering a meticulously maintained fleet and a team of professional chauffeurs who embody our commitment to excellence.
@@ -93,9 +93,9 @@ export default function AboutUs() {
                                 <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 group-hover:bg-gold-metallic group-hover:text-white transition-all duration-500 text-gold-metallic">
                                     <Icon size={28} />
                                 </div>
-                                <h4 className="text-xl font-bold text-luxury-black mb-3">
+                                <h3 className="text-xl font-bold text-luxury-black mb-3">
                                     {value.title}
-                                </h4>
+                                </h3>
                                 <p className="text-luxury-gray text-sm leading-relaxed font-light">
                                     {value.description}
                                 </p>
@@ -119,7 +119,7 @@ export default function AboutUs() {
                         "Your journey is our canvas. Every mile we drive is a stroke of commitment towards your absolute comfort and safety."
                     </p>
                     <div className="w-12 h-[1px] bg-gold-metallic mx-auto" />
-                    <p className="text-gold-metallic uppercase tracking-[0.3em] font-bold text-sm">Adam Tours Management</p>
+                    <p className="text-gold-metallic uppercase tracking-[0.3em] font-bold text-sm">{companyConfig.name} Management</p>
                 </div>
             </motion.div>
         </SectionWrapper>

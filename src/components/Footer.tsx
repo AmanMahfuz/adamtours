@@ -1,6 +1,7 @@
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { companyConfig } from "@/lib/config";
 
 export default function Footer() {
     return (
@@ -22,13 +23,15 @@ export default function Footer() {
                         </p>
                         <div className="flex gap-4">
                             {[
-                                { Icon: Instagram, name: "Instagram" },
-                                { Icon: Facebook, name: "Facebook" },
-                                { Icon: Twitter, name: "Twitter" }
-                            ].map(({ Icon, name }, i) => (
+                                { Icon: Instagram, name: "Instagram", href: companyConfig.social.instagram },
+                                { Icon: Facebook, name: "Facebook", href: companyConfig.social.facebook },
+                                { Icon: Twitter, name: "Twitter", href: "#" }
+                            ].map(({ Icon, name, href }, i) => (
                                 <a
                                     key={i}
-                                    href="#"
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full border border-luxury-black/10 flex items-center justify-center text-luxury-gray hover:text-gold-metallic hover:border-gold-metallic transition-all duration-300"
                                     aria-label={`Follow us on ${name}`}
                                 >
@@ -42,10 +45,10 @@ export default function Footer() {
                     <div className="md:col-span-1">
                         <h3 className="text-sm font-bold uppercase tracking-widest text-luxury-black mb-6">Quick Links</h3>
                         <ul className="space-y-4">
-                            {["Fleet", "Services", "Destinations", "Packages", "About Us"].map((item) => (
+                            {["Fleet", "Services", "Destinations", "Packages", "About"].map((item) => (
                                 <li key={item}>
                                     <Link href={`#${item.toLowerCase()}`} className="text-luxury-gray hover:text-gold-metallic transition-colors text-sm">
-                                        {item}
+                                        {item === "About" ? "About Us" : item}
                                     </Link>
                                 </li>
                             ))}
@@ -58,15 +61,15 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-luxury-gray text-sm">
                                 <MapPin size={18} className="text-gold-metallic shrink-0" />
-                                <span>123 Luxury Lane, Premium Tower,<br />Cochin, Kerala</span>
+                                <span>{companyConfig.address}</span>
                             </li>
                             <li className="flex items-center gap-3 text-luxury-gray text-sm">
                                 <Phone size={18} className="text-gold-metallic shrink-0" />
-                                <span>+91 98765 43210</span>
+                                <span>{companyConfig.phone}</span>
                             </li>
                             <li className="flex items-center gap-3 text-luxury-gray text-sm">
                                 <Mail size={18} className="text-gold-metallic shrink-0" />
-                                <span>book@adamtours.com</span>
+                                <span>{companyConfig.email}</span>
                             </li>
                         </ul>
                     </div>
@@ -99,8 +102,8 @@ export default function Footer() {
                         © {new Date().getFullYear()} Adam Tours & Travels. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-xs text-luxury-muted">
-                        <Link href="#" className="hover:text-luxury-black transition-colors">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-luxury-black transition-colors">Terms of Service</Link>
+                        <Link href="/privacy" className="hover:text-luxury-black transition-colors">Privacy Policy</Link>
+                        <Link href="/terms" className="hover:text-luxury-black transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>

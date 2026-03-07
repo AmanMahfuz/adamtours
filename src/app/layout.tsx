@@ -3,17 +3,20 @@ import { Playfair_Display, Manrope } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Script from "next/script";
+import { companyConfig } from "@/lib/config";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "700"],
 });
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -51,14 +54,14 @@ export const metadata: Metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Adam Tours & Travels",
+  "name": companyConfig.name,
   "image": "https://adamtours.com/og-image.jpg",
   "@id": "https://adamtours.com",
   "url": "https://adamtours.com",
-  "telephone": "+919876543210",
+  "telephone": companyConfig.phone,
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Luxury Lane, Premium Tower",
+    "streetAddress": companyConfig.address,
     "addressLocality": "Cochin",
     "addressRegion": "Kerala",
     "postalCode": "682001",
@@ -84,8 +87,8 @@ const structuredData = {
     "closes": "23:59"
   },
   "sameAs": [
-    "https://facebook.com/adamtours",
-    "https://instagram.com/adamtours"
+    companyConfig.social.facebook,
+    companyConfig.social.instagram
   ],
   "priceRange": "₹₹₹",
   "areaServed": {
@@ -102,6 +105,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <Script
           id="structured-data"
           type="application/ld+json"
