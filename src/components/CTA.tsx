@@ -20,7 +20,7 @@ export default function CTA() {
         <SectionWrapper id="contact" className="bg-luxury-white relative overflow-hidden py-32">
             <div className="relative z-10 text-center space-y-8 max-w-3xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-luxury-black">
-                    Contact Adam Tours & <span className="text-gold-metallic">Travels</span>
+                    Contact Adam Tours & <span className="text-gold-text">Travels</span>
                 </h2>
                 <p className="text-lg text-luxury-gray leading-relaxed">
                     Book your reliable Kochi taxi service today. Available 24/7 for airport transfers and Kerala tour packages.

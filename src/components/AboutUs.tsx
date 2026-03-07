@@ -48,7 +48,7 @@ export default function AboutUs() {
                     className="space-y-8"
                 >
                     <div className="space-y-4">
-                        <span className="text-gold-metallic text-sm font-bold tracking-[0.2em] uppercase">The Legacy</span>
+                        <span className="text-gold-text text-sm font-bold tracking-[0.2em] uppercase">The Legacy</span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-luxury-black leading-tight">
                             About Adam Tours & Travels Kochi
                         </h2>

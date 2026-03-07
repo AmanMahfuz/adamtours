@@ -16,6 +16,7 @@ export default function Footer() {
                                 alt="Adam Tours Logo"
                                 fill
                                 className="object-contain object-left"
+                                sizes="160px"
                             />
                         </Link>
                         <p className="text-luxury-gray leading-relaxed max-w-xs text-sm">

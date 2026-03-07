@@ -14,8 +14,8 @@ export default function Button({ children, variant = "primary", className, ...pr
     const baseStyles = "relative px-8 py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden group cursor-pointer tracking-wider text-sm";
 
     const variants = {
-        primary: "bg-gold-metallic text-white hover:bg-gold-rich hover:shadow-[0_5px_15px_rgba(198,168,79,0.3)]",
-        outline: "border border-luxury-black/10 text-luxury-black hover:border-gold-metallic hover:text-gold-metallic bg-transparent",
+        primary: "bg-gold-metallic text-luxury-black hover:bg-gold-rich hover:shadow-[0_5px_15px_rgba(198,168,79,0.3)]",
+        outline: "border border-luxury-black/10 text-luxury-black hover:border-gold-metallic hover:text-gold-text bg-transparent",
         ghost: "text-luxury-black/60 hover:text-gold-metallic bg-transparent",
     };
 

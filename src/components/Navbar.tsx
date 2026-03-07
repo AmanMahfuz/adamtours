@@ -143,6 +143,7 @@ export default function Navbar() {
                                     isScrolled && currentTheme === "dark" && "brightness-0 invert"
                                 )}
                                 priority
+                                sizes="128px"
                             />
                         </div>
                     </Link>
@@ -160,7 +161,7 @@ export default function Navbar() {
                                 className={cn(
                                     "relative px-4 py-2 text-xs font-bold transition-all rounded-full whitespace-nowrap tracking-widest uppercase",
                                     isActive
-                                        ? "text-gold-metallic bg-gold-metallic/10"
+                                        ? "text-white bg-luxury-black"
                                         : isScrolled && currentTheme === "dark"
                                             ? "text-white/70 hover:text-white hover:bg-white/10"
                                             : "text-luxury-gray hover:text-luxury-black hover:bg-luxury-black/5"
@@ -236,7 +237,7 @@ export default function Navbar() {
                                         className={cn(
                                             "text-lg font-bold p-3 rounded-xl transition-all flex justify-between items-center group",
                                             isActive
-                                                ? "text-gold-metallic bg-gold-metallic/10"
+                                                ? "text-white bg-luxury-black"
                                                 : currentTheme === "dark"
                                                     ? "text-white/80 hover:bg-white/10 hover:text-white"
                                                     : "text-luxury-black hover:bg-luxury-ivory"

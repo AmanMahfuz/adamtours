@@ -61,7 +61,7 @@ export default function Testimonials() {
                 variants={containerVariants}
                 className="text-center mb-16 space-y-4"
             >
-                <motion.span variants={itemVariants} className="text-gold-metallic text-sm font-bold tracking-[0.2em] uppercase">Client Stories</motion.span>
+                <motion.span variants={itemVariants} className="text-gold-text text-sm font-bold tracking-[0.2em] uppercase">Client Stories</motion.span>
                 <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-black">What Our Customers Say</motion.h2>
             </motion.div>
 
@@ -104,7 +104,7 @@ export default function Testimonials() {
                                     />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-luxury-black text-lg">{testimonial.name}</h4>
+                                    <h3 className="font-bold text-luxury-black text-lg">{testimonial.name}</h3>
                                     <p className="text-[10px] text-luxury-muted uppercase tracking-[0.2em] font-bold">{testimonial.location}</p>
                                 </div>
                             </div>

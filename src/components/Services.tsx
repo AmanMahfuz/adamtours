@@ -41,7 +41,7 @@ export default function Services() {
     return (
         <SectionWrapper id="services" className="bg-luxury-white">
             <div className="text-center mb-16 space-y-4">
-                <span className="text-gold-metallic text-sm font-bold tracking-[0.2em] uppercase">Why Choose Us</span>
+                <span className="text-gold-text text-sm font-bold tracking-[0.2em] uppercase">Why Choose Us</span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-black">Why Choose Our Kochi Taxi Service</h2>
             </div>
 

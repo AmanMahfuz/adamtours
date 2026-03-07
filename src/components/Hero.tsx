@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section id="hero" className="relative min-h-[90vh] flex items-center pt-20 pb-20 overflow-hidden bg-luxury-white">
+        <section id="hero" className="relative min-h-[90vh] flex items-center pt-12 md:pt-16 pb-20 overflow-hidden bg-luxury-white">
             {/* Background Decor */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-gold-highlight/10 to-transparent rounded-bl-full pointer-events-none" />
 
@@ -16,9 +16,9 @@ export default function Hero() {
                 {/* Left Column: Text Content & CTAs */}
                 <div className="space-y-8">
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
+                        initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
                         className="space-y-6 text-center lg:text-left"
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-luxury-black/5 border border-luxury-black/10 mx-auto lg:mx-0">
@@ -28,7 +28,7 @@ export default function Hero() {
 
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-luxury-black tracking-tight leading-[1.1]">
                             Kochi Taxi Service <br />
-                            <span className="text-gold-metallic">Premium Cabs</span>
+                            <span className="text-gold-text">Premium Cabs</span>
                         </h1>
 
                         <p className="text-base md:text-lg text-luxury-gray max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
@@ -38,9 +38,9 @@ export default function Hero() {
 
                     {/* CTA Group */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
                         className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
                     >
                         <Button
@@ -64,7 +64,7 @@ export default function Hero() {
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
                         className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4"
                     >
                         <div className="flex items-center gap-2 text-sm text-luxury-gray font-medium">
@@ -82,7 +82,7 @@ export default function Hero() {
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex items-center gap-8 justify-center lg:justify-start pt-4"
                     >
                         <div className="flex -space-x-3">
@@ -105,9 +105,9 @@ export default function Hero() {
 
                 {/* Right Column: Hero Image */}
                 <motion.div
-                    initial={{ opacity: 0, x: 30 }}
+                    initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                    transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
                     className="relative hidden lg:block h-full min-h-[600px]"
                 >
                     <div className="absolute inset-0 bg-luxury-ivory rounded-[3rem] overflow-hidden border border-luxury-black/5 shadow-xl">
@@ -117,6 +117,7 @@ export default function Hero() {
                             fill
                             className="object-cover"
                             priority
+                            fetchPriority="high"
                             sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/60 via-transparent to-transparent opacity-80" />

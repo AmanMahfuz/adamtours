@@ -39,7 +39,7 @@ export default function FAQ() {
     return (
         <SectionWrapper id="faq" className="bg-luxury-white">
             <div className="text-center mb-16 space-y-4">
-                <span className="text-gold-metallic text-sm font-bold tracking-[0.2em] uppercase">FAQ</span>
+                <span className="text-gold-text text-sm font-bold tracking-[0.2em] uppercase">FAQ</span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-black">Frequently Asked Questions</h2>
             </div>
 

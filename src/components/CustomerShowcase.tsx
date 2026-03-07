@@ -36,7 +36,7 @@ export default function CustomerShowcase() {
                 variants={containerVariants}
                 className="text-center mb-16 space-y-4"
             >
-                <motion.span variants={itemVariants} className="text-gold-metallic text-sm font-bold tracking-[0.2em] uppercase">Visual Journey</motion.span>
+                <motion.span variants={itemVariants} className="text-gold-text text-sm font-bold tracking-[0.2em] uppercase">Visual Journey</motion.span>
                 <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-black">Happy Customers</motion.h2>
                 <motion.p variants={itemVariants} className="text-luxury-gray max-w-2xl mx-auto font-light leading-relaxed">
                     Real moments captured during our premium tours across India.

@@ -41,7 +41,7 @@ export default function Destinations() {
                 variants={containerVariants}
                 className="text-center mb-16 space-y-4"
             >
-                <motion.span variants={textVariants} className="text-gold-metallic text-sm font-bold tracking-[0.2em] uppercase block">Destinations</motion.span>
+                <motion.span variants={textVariants} className="text-gold-text text-sm font-bold tracking-[0.2em] uppercase block">Destinations</motion.span>
                 <motion.h2 variants={textVariants} className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-luxury-black">Popular Kerala Tourist Destinations</motion.h2>
                 <motion.p variants={textVariants} className="text-luxury-gray max-w-2xl mx-auto font-light leading-relaxed">
                     Discover the God&apos;s Own Country with our curated travel experiences to the most beautiful locations.
