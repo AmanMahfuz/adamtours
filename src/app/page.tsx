@@ -1,18 +1,20 @@
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
-import AboutUs from "@/components/AboutUs";
-import CustomerShowcase from "@/components/CustomerShowcase";
-import Fleet from "@/components/Fleet";
-import Services from "@/components/Services";
-import Destinations from "@/components/Destinations";
-import PopularTrips from "@/components/PopularTrips";
-import Testimonials from "@/components/Testimonials";
-import CTA from "@/components/CTA";
-import Statistics from "@/components/Statistics";
-import FAQ from "@/components/FAQ";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import BackToTop from "@/components/BackToTop";
+
+const Footer = dynamic(() => import("@/components/Footer"));
+const AboutUs = dynamic(() => import("@/components/AboutUs"));
+const CustomerShowcase = dynamic(() => import("@/components/CustomerShowcase"));
+const Fleet = dynamic(() => import("@/components/Fleet"));
+const Services = dynamic(() => import("@/components/Services"));
+const Destinations = dynamic(() => import("@/components/Destinations"));
+const PopularTrips = dynamic(() => import("@/components/PopularTrips"));
+const Testimonials = dynamic(() => import("@/components/Testimonials"));
+const CTA = dynamic(() => import("@/components/CTA"));
+const Statistics = dynamic(() => import("@/components/Statistics"));
+const FAQ = dynamic(() => import("@/components/FAQ"));
+const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
+const BackToTop = dynamic(() => import("@/components/BackToTop"));
 
 export default function Home() {
   return (
